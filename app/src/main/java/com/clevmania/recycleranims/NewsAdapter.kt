@@ -17,8 +17,6 @@ class NewsAdapter(private val newsList : List<NewsModel>) : RecyclerView.Adapter
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
         holder.bindViews(newsList[position])
-        holder.itemView.view.animation = AnimationUtils
-            .loadAnimation(holder.itemView.context,R.anim.fade_transition)
     }
 
     class NewsViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
@@ -26,6 +24,12 @@ class NewsAdapter(private val newsList : List<NewsModel>) : RecyclerView.Adapter
             itemView.tv_date.text = newsModel.date
             itemView.tv_description.text = newsModel.description
             itemView.tv_title.text = newsModel.title
+
+            itemView.iv_news_icon.animation = AnimationUtils
+                .loadAnimation(itemView.context,R.anim.fade_transition)
+
+            itemView.view.animation = AnimationUtils
+                .loadAnimation(itemView.context,R.anim.fade_scale)
         }
     }
 
