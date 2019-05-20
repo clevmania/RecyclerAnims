@@ -3,6 +3,7 @@ package com.clevmania.recycleranims
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_news.view.*
 
@@ -16,6 +17,8 @@ class NewsAdapter(private val newsList : List<NewsModel>) : RecyclerView.Adapter
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
         holder.bindViews(newsList[position])
+        holder.itemView.view.animation = AnimationUtils
+            .loadAnimation(holder.itemView.context,R.anim.fade_transition)
     }
 
     class NewsViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
