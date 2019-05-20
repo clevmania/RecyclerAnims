@@ -10,6 +10,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        populateView()
     }
 
     private fun populateView(){
@@ -25,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         newsList.add(NewsModel("Pursuit Fellowship",getString(R.string.lorel),"12-12-2019"))
         newsList.add(NewsModel("Pursuit Fellowship",getString(R.string.lorel),"12-12-2019"))
         newsList.add(NewsModel("Pursuit Fellowship",getString(R.string.lorel),"12-12-2019"))
-        newsList.add(NewsModel("Pursuit Fellowship",getString(R.string.lorel),"12-12-2019"))
+        newsList.add(NewsModel("Pursuit Fellowship",getString(R.string.lorel),"2-08-2019"))
         rv_news.setHasFixedSize(true)
         rv_news.layoutManager = LinearLayoutManager(this)
         val adapter = NewsAdapter(newsList)
